@@ -7,8 +7,8 @@ public class DepthFirstSearch {
 
 	private boolean[] marked;
 	private int count;
-	private int[] edgeTo; //last vertex on known path to this vertex
-	private final int s; //source
+	private int[] edgeTo; 
+	private final int s; 
 
 	public DepthFirstSearch(Graph G, int s) {
 		marked = new boolean[G.V()];
