@@ -14,25 +14,25 @@ public class graph {
 	public graph(int V) {
 		this.V = V;
 		this.E = 0;
-		adj = (Bag<Integer>[]) new Bag[V]; // Create array of lists.
+		adj = (Bag<Integer>[]) new Bag[V]; 
 		for (int v = 0; v < V; v++)
-			// Initialize all lists
-			adj[v] = new Bag<Integer>(); // to empty.
+			
+			adj[v] = new Bag<Integer>();
 	}
 
 	public graph(In in) {
-		this(in.readInt()); // Read V and construct this graph.
-		int E = in.readInt(); // Read E.
-		for (int i = 0; i < E; i++) { // Add an edge.
-			int v = in.readInt(); // Read a vertex,
-			int w = in.readInt(); // read another vertex,
-			addEdge(v, w); // and add edge connecting them.
+		this(in.readInt()); 
+		int E = in.readInt(); 
+		for (int i = 0; i < E; i++) { 
+			int v = in.readInt(); 
+			int w = in.readInt(); 
+			addEdge(v, w); 
 		}
 	}
 
 	public void addEdge(int v, int w) {
-		adj[v].add(w); // Add w to v’s list.
-		adj[w].add(v); // Add v to w’s list.
+		adj[v].add(w); 
+		adj[w].add(v); 
 		E++;
 	}
 
@@ -73,7 +73,7 @@ public class graph {
 			for (int w : G.adj(v))
 				if (v == w)
 					count++;
-		return count / 2; // each edge counted twice
+		return count / 2; 
 	}
 
 	public String toString() {
